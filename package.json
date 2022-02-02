@@ -9,6 +9,7 @@
   "repository": "https://github.com/hyunjinee/TIL",
   "author": "hyunjin <leehj0110@kakao.com>",
   "devDependencies": {
+    "mini-css-extract-plugin": "^2.5.3",
     "vuepress": "^1.9.7"
   }
 }
