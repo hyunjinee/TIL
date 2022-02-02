@@ -1,16 +1,47 @@
-name: Build and Deploy
-on: [push]
+name: build & deploy
+
+on:
+  push:
+    branches: [master]
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@main
 
-      - name: Vuepress deploy
-        uses: jenkey2011/vuepress-deploy@1.0.1
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy Build Files
         env:
+          # You should enroll ACEESS_TOKEN to repository's secret
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BUILD_SCRIPT: yarn && yarn build
-          TARGET_BRANCH: gh-pages
-          BUILD_DIR: build/
+        run: |
+          git config --global user.email "leehj0110@kakao.com"
+          git config --global user.name "hyunjinee"
+          git init
+          git add -A
+          git commit -m 'deploy with vuepress'
+          git push -f https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master:gh-pages
+
+# name: Build and Deploy
+# on: [push]
+# jobs:
+#   build-and-deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@main
+
+#       - name: Vuepress deploy
+#         uses: jenkey2011/vuepress-deploy@1.0.1
+#         env:
+#           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+#           BUILD_SCRIPT: yarn && yarn build
+#           TARGET_BRANCH: gh-pages
+#           BUILD_DIR: build/
