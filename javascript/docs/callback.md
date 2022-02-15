@@ -1,4 +1,4 @@
-# 콜백
+# callback
 
 자바스크립트 호스트 환경이 제공하는 여러 함수를 사용하면 비동기동작을 스케줄링 할 수 있다. 원하는 때에 동작이 시작하도록 할 수 있다.
 
@@ -58,8 +58,7 @@ function loadScript(src, callback) {
   script.src = src;
 
   script.onload = () => callback(null, script);
-  script.onerror = () =>
-    callback(new Error(`${src}를 불러오는 도중에 에러가 발생했습니다.`));
+  script.onerror = () => callback(new Error(`${src}를 불러오는 도중에 에러가 발생했습니다.`));
 
   document.head.append(script);
 }
