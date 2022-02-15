@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <iframe src="https://www.google.com/" frameborder="0"></iframe>
+    <script>
+      //document.querySelector("textarea").focus();
+      //console.log(document.activeElement);
+      setTimeout(() => console.log(document.hasFocus()), 5000);
+      console.log(document.defaultView);
+
+      console.log(document.body.ownerElement);
+      console.log(window.frames[0].document.body.ownerElement);
+    </script>
+  </body>
+</html>

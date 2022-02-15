@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        background-color: red;
+        border: 1px solid black;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="background-color: green; border: 1px solid purple"></div>
+
+    <script>
+      let div = document.querySelector("div");
+      console.log(window.getComputedStyle(div).backgroundColor);
+      console.log(window.getComputedStyle(div).border);
+      console.log(window.getComputedStyle(div).height);
+      console.log(window.getComputedStyle(div).width);
+    </script>
+  </body>
+</html>

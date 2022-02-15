@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="#">hi</a>
+    <script>
+      console.log(document.doctype.nodeValue);
+      console.log((document.querySelector("a").firstChild.nodeValue = "hello"));
+      let element_node = document.createElement("div");
+      console.log(element_node, element_node.nodeType);
+      let text_node = document.createTextNode("hi");
+      console.log(text_node, text_node.nodeType);
+    </script>
+  </body>
+</html>

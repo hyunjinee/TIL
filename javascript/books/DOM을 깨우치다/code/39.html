@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Go Big Blue Blue</p>
+    <script>
+      let pElementText = document.querySelector("p").firstChild;
+      pElementText.appendData("!");
+      console.log(pElementText.data);
+      pElementText.deleteData(7, 5);
+      console.log(pElementText.data);
+      pElementText.insertData(7, "Blue ");
+      console.log(pElementText.data);
+      pElementText.replaceData(7, 5, "Bunny ");
+      console.log(pElementText.data);
+      console.log(pElementText.substringData(7, 10));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      let divStyle = document.querySelector("div").style;
+      divStyle.backgroundColor = "red";
+      divStyle.border = "1px solid black";
+      divStyle.width = "100px";
+      divStyle.height = "100px";
+
+      console.log(divStyle.backgroundColor);
+      console.log(divStyle.border);
+      console.log(divStyle.width);
+      console.log(divStyle.height);
+      //제거
+      divStyle.width = "";
+    </script>
+  </body>
+</html>

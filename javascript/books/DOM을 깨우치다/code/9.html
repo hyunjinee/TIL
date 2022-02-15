@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <!-- comment -->
+
+      <li id="A"></li>
+      <li id="B"><h1></h1></li>
+    </ul>
+    <script>
+      var ul = document.querySelector("ul");
+
+      console.log(ul.parentNode.nodeName);
+      console.log(ul.firstChild.nodeName);
+      console.log(ul.lastChild.nodeName);
+      console.log(ul.querySelector("#A").nextSibling.nextSibling.nodeName);
+      console.log(ul.querySelector("#B").previousSibling.nodeName);
+      console.log(ul.querySelector("#B").childElementCount);
+    </script>
+  </body>
+</html>

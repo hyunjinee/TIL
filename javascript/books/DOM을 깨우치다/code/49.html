@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>click me to start event flow</div>
+    <script>
+      window.addEventListener(
+        "click",
+        function () {
+          console.log(1);
+        },
+        true
+      );
+      document.addEventListener(
+        "click",
+        function () {
+          console.log(2);
+        },
+        true
+      );
+      document.documentElement.addEventListener(
+        "click",
+        function () {
+          console.log(3);
+        },
+        true
+      );
+      document.body.addEventListener(
+        "click",
+        function () {
+          console.log(4);
+        },
+        true
+      );
+      document.querySelector("div").addEventListener(
+        "click",
+        function () {
+          console.log(5);
+        },
+        true
+      );
+      document.querySelector("div").addEventListener(
+        "click",
+        function () {
+          console.log(6);
+        },
+        false
+      );
+      document.body.addEventListener(
+        "click",
+        function () {
+          console.log(7);
+        },
+        false
+      );
+      document.documentElement.addEventListener(
+        "click",
+        function () {
+          console.log(8);
+        },
+        false
+      );
+      document.addEventListener(
+        "click",
+        function () {
+          console.log(9);
+        },
+        false
+      );
+      window.addEventListener(
+        "click",
+        function () {
+          console.log(10);
+        },
+        false
+      );
+    </script>
+  </body>
+</html>

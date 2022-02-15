@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        height: 25px;
+        width: 25px;
+        background-color: red;
+        border: 25px solid gray;
+        padding: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      let divEdges = document.querySelector("div").getBoundingClientRect();
+      //console.log(divEdges.top, divEdges.right, divEdges.bottom, divEdges.left);
+      console.log(divEdges.height, divEdges.width);
+      let div = document.querySelector("div");
+      console.log(div.offsetHeight, div.offsetWidth);
+    </script>
+  </body>
+</html>

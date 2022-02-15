@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onclick="console.log('body is clicked')">
+    <div>click me</div>
+    <p>click p me</p>
+    <script>
+      var elementDiv = document.querySelector("div");
+      elementDiv.onclick = function () {
+        console.log("elementDiv clicked");
+      };
+      document.querySelector("p").addEventListener("click", function () {
+        console.log("p clicked");
+      });
+    </script>
+  </body>
+</html>

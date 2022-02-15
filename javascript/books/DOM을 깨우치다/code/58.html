@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>click a table cell</p>
+    <table border="1">
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>11</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>12</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      document
+        .querySelector("table")
+        .addEventListener("click", function (event) {
+          console.log(event.currentTarget);
+          console.log(event.target);
+          if (event.target.tagName.toLowerCase() === "td") {
+            console.log(event.target.textContent);
+          }
+        });
+    </script>
+  </body>
+</html>

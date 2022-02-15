@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a
+      href="#"
+      title="title"
+      data-foo="dataFoo"
+      class="yes"
+      style="margin: 0"
+      foo="boo"
+    ></a>
+
+    <script>
+      var attrs = document.querySelector("a").attributes;
+      for (let i = 0; i < attrs.length; i++) {
+        console.log(attrs[i].nodeName + "=" + attrs[i].nodeValue);
+      }
+    </script>
+  </body>
+</html>

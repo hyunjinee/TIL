@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>hi</p>
+    <script>
+      let text = document.querySelector("p").firstChild;
+      console.log(Object.keys(text));
+      let textPropertiesIncludeInherited = [];
+      for (var p in text) {
+        textPropertiesIncludeInherited.push(p);
+      }
+      console.log(textPropertiesIncludeInherited.sort());
+      let textPropertiesOnlyInherited = [];
+      for (let p in text) {
+        if (!text.hasOwnProperty(p)) {
+          textPropertiesOnlyInherited.push(p);
+        }
+      }
+      console.log(textPropertiesOnlyInherited.sort());
+    </script>
+  </body>
+</html>

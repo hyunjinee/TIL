@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="A"></div>
+    <div id="B"></div>
+    <span id="C"></span>
+    <div id="D"></div>
+    <div id="E"></div>
+    <script>
+      document.getElementById("A").innerHTML = "<strong>Hi</strong>";
+      document.getElementById("B").outerHTML =
+        "<div id = 'B' class='new'>Whats shaking </div>";
+      document.getElementById("C").textContent = "dude";
+      document.getElementById("D").innerText = "Keep it";
+      document.getElementById("E").outerText = "real!";
+      console.log(document.body.innerHTML);
+    </script>
+  </body>
+</html>

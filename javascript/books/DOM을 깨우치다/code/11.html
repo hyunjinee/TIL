@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log(window.document.constructor);
+      console.log(window.document.nodeType);
+      console.log(Object.keys(document).sort());
+
+      var documentPropertiesIncludeInherited = [];
+      for (var p in document) {
+        documentPropertiesIncludeInherited.push(p);
+      }
+      console.log(documentPropertiesIncludeInherited);
+
+      var documentPropertiesOnlyInherited = [];
+
+      for (var p in document) {
+        if (!document.hasOwnProperty(p)) {
+          documentPropertiesOnlyInherited.push(p);
+        }
+      }
+      console.log(documentPropertiesOnlyInherited.sort());
+    </script>
+  </body>
+</html>

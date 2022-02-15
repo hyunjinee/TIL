@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        height: 100px;
+        width: 100px;
+        overflow: auto;
+      }
+      p {
+        height: 1000px;
+        width: 1000px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div><p></p></div>
+    <script>
+      var div = document.querySelector("div");
+      div.scrollTop = 100;
+      div.scrollLeft = 750;
+      console.log(div.scrollTop, div.scrollLeft);
+    </script>
+  </body>
+</html>

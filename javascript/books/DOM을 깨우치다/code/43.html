@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      let textNodehyunjin = document.createTextNode("hyunjin");
+      let textNodeHi = document.createTextNode("hi ");
+      let pElementNode = document.createElement("p");
+      pElementNode.appendChild(textNodeHi);
+      pElementNode.appendChild(textNodehyunjin);
+
+      document.querySelector("div").appendChild(pElementNode);
+      console.log(document.querySelector("p").childNodes.length);
+      document.querySelector("div").normalize();
+      console.log(document.querySelector("div").childNodes.length);
+    </script>
+  </body>
+</html>

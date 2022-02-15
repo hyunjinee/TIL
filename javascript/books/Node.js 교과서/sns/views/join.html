@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="timeline">
+    <form action="/auth/join" method="POST" id="join-form">
+        <div class="input-group">
+            <label for="join-email">이메일</label>
+            <input type="email" name="email" id="join-email">
+        </div>
+        <div class="input-group">
+            <label for="join-nick">닉네임</label>
+            <input type="text" id="join-nick" name="nick">
+        </div>
+        <div class="input-group">
+            <label for="join-password">비밀번호</label>
+            <input type="password" id="join-password" name="password">
+        </div>
+        <button id="join-btn" type="submit" class="btn">회원가입</button>
+    </form>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    window.onload = () => {
+        if (new URL(location.href).searchParams.get('error')) {
+            alert('이미 존재하는 이메일입니다.')
+        }
+    }
+</script>
+
+{% endblock %}

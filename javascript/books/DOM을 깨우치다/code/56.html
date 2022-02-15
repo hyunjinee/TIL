@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="google.com">no go</a>
+    <input type="checkbox" />
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+
+    <script>
+      document.querySelector("a").addEventListener("click", function (event) {
+        event.preventDefault();
+      }); // url 로드 하는 a의 기본이벤트 중지
+      document
+        .querySelector("input")
+        .addEventListener("click", function (event) {
+          event.preventDefault();
+        }); // 체크박스 상태를 전환하는 체크박스의 기본 이벤트를 중지시킴
+      document
+        .querySelector("textarea")
+        .addEventListener("keypress", function (event) {
+          event.preventDefault(); //입력한 문자를 추가하는 기본이벤트를 중지시킨다.
+        });
+
+      document.body.addEventListener("click", function () {
+        console.log("the event flow still flows");
+      });
+
+      //preventDefault 는 이벤트가 전파되는것 즉 버블링이나 캡처단계를 중지시키지는 않는다.
+      // 이벤트 수신기의 끝부분에서 false 를 반환하면 preventDefault() 메서드를 호출하는 것과 동일한결과
+    </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #blue {
+        height: 100px;
+        width: 100px;
+        background-color: blue;
+        border: 10px solid gray;
+        padding: 25px;
+        margin: 25px;
+      }
+      #red {
+        height: 50px;
+        width: 50px;
+        background-color: red;
+        border: 10px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="blue">
+      <div id="red"></div>
+    </div>
+    <script>
+      let div = document.querySelector("#red");
+      console.log(div.offsetLeft);
+      console.log(div.offsetTop);
+      console.log(div.offsetParent);
+    </script>
+  </body>
+</html>

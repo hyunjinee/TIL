@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a
+      href="#"
+      title="title"
+      data-foo="dataFoo"
+      style="margin: 0"
+      class="yes"
+      foo="boo"
+      hidden="hidden"
+      >#link</a
+    >
+    <script>
+      var atts = document.querySelector("a");
+      atts.removeAttribute("href");
+      console.log(atts);
+      atts.removeAttribute("title");
+      atts.removeAttribute("style");
+      atts.removeAttribute("data-foo");
+      atts.removeAttribute("class");
+      atts.removeAttribute("foo");
+      //atts.removeAttribute("hidden");
+      console.log(atts);
+      atts.setAttribute("href", "#");
+      atts.setAttribute("title", "title");
+      atts.setAttribute("sytle", "margin:0;");
+      atts.setAttribute("data-foo", "dataFoo");
+      atts.setAttribute("class", "yes");
+      atts.setAttribute("foo", "boo");
+      atts.setAttribute("hidden", "hidden");
+      console.log(atts);
+
+      console.log(atts.getAttribute("href"));
+      console.log(atts.getAttribute("hidden"));
+      console.log(atts.getAttribute("foo"));
+    </script>
+  </body>
+</html>

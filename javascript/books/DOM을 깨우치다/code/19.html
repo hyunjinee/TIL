@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a
+      href="#"
+      title="title"
+      data-foo="dataFoo"
+      style="margin: 0"
+      class="yes"
+      goo
+    ></a>
+    <script>
+      var atts = document.querySelector("a");
+      console.log(
+        atts.hasAttribute("href"),
+        atts.hasAttribute("goo"),
+        atts.hasAttribute("title"),
+        atts.hasAttribute("style"),
+        atts.hasAttribute("class")
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href=""></a>
+    <script>
+      console.log(document.querySelector("a").constructor);
+      var anchor = document.querySelector("a");
+      console.log(Object.keys(anchor).sort());
+      var documentPropertiesIncludeInherited = [];
+      for (var p in document) {
+        documentPropertiesIncludeInherited.push(p);
+      }
+      console.log(documentPropertiesIncludeInherited.sort());
+      var documentPropertiesOnlyInherited = [];
+      for (var p in document) {
+        if (!document.hasOwnProperty(p)) {
+          documentPropertiesOnlyInherited.push(p);
+        }
+      }
+      console.log(documentPropertiesOnlyInherited);
+    </script>
+  </body>
+</html>

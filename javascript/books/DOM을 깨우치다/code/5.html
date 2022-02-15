@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="A">hi</div>
+    <div id="B">hyunjin</div>
+
+    <script>
+      let divA = document.getElementById("A");
+      let newSpan = document.createElement("span");
+      newSpan.textContent = "hyunjinmom";
+      divA.parentNode.replaceChild(newSpan, divA);
+      let divB = document.getElementById("B").firstChild;
+      let newTxt = document.createTextNode("friends");
+      divB.parentNode.replaceChild(newTxt, divB);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0px;
+      }
+      div {
+        height: 50px;
+        width: 50px;
+        background-color: red;
+        border: 10px solid gray;
+        margin: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      let divEdges = document.querySelector("div").getBoundingClientRect();
+      console.log(divEdges.top, divEdges.right, divEdges.bottom, divEdges.left);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>click me</div>
+    <script>
+      document.querySelector("div").addEventListener("click", function () {
+        console.log("me too , but nothing from the event flow");
+      });
+      document.querySelector("div").addEventListener("click", function (event) {
+        console.log(
+          "invoked all click events attached but cancel capture and bubble event phases"
+        );
+        event.stopPropagation();
+      });
+      document.querySelector("div").addEventListener("click", function () {
+        console.log("me too , but nothing from the event flow");
+      });
+      document.body.addEventListener("click", function () {
+        console.log("what, denied from being invoked");
+      });
+    </script>
+  </body>
+</html>
