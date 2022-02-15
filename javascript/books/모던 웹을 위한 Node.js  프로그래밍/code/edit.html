@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Edit Page</h1>
+    <hr />
+
+    <form method="POST">
+      <fieldset>
+        <legend>Edit Data</legend>
+        <table>
+          <tr>
+            <td><label>ID</label></td>
+            <td>
+              <input type="text" name="id" value="<% data.id %>" disabled />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Name</label></td>
+            <td>
+              <input type="text" name="name" value="<% data.name %>" />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Model Number</label></td>
+            <td>
+              <input
+                type="text"
+                name="modelnumber"
+                value="<% data.modelnumber %>"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label>Series</label></td>
+            <td>
+              <input type="text" name="\seriesd" value="<% data.series %>" />
+            </td>
+          </tr>
+        </table>
+        <input type="submit" />
+      </fieldset>
+    </form>
+  </body>
+</html>

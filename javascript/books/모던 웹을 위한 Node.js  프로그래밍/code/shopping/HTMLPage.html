@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"
+    />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      $(document).ready(function () {
+        function changeIcon(target, from, to) {
+          $(target).removeClass(from).addClass(to);
+        }
+        function changeCount(index, count) {
+          $("li[data-index=" + index + "] .ui-li-count").html(count);
+        }
+        var socket = io.connect();
+        socket.on("count", function (data) {
+          changeCount(data.index, data.count);
+        });
+
+        $(".product > a[data-icon]").click(function () {
+          if ($(this).attr("toggle") != "off") {
+            var index = $(this).attr("data-index");
+            socket.emit("cart", Number(index));
+            changeIcon(this, "ui-icon-heart", "ui-icon-check");
+            $(this).attr("toggle", "off");
+          } else {
+            var index = $(this).attr("data-index");
+            if (confirm("물건을 구매하시겠습니까??")) {
+              socket.emit("buy", Number(index));
+              $(this).parent().remove();
+              $("#listview").listview("refresh");
+            } else {
+              socket.emit("return", Number(index));
+              changeIcon(this, "ui-icon-check", "ui-icon-heart");
+            }
+            $(this).attr("toggle", "on");
+          }
+        });
+      });
+    </script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div data-role="page">
+      <div data-role="header">
+        <h1>Store</h1>
+      </div>
+      <div data-role="content">
+        <ul
+          id="listview"
+          data-role="listview"
+          data-inset="true"
+          data-filter="true"
+        >
+          <li data-role="list-divider">products</li>
+          <% products.forEach(function(item, index) { %>
+          <li class="product" data-index="<%= item.index %>">
+            <a href="#"
+              ><img src="chrome.png" />
+              <h3><%= item.name %></h3>
+              <p><%= item.price %>원</p>
+              <span class="ui-li-count"><%= item.count %></span></a
+            >
+            <a href="#" data-icon="heart" data-index="<%= item.index %>"></a>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

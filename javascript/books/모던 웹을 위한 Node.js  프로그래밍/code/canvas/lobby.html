@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      $(document).ready(function () {
+        $.getJSON("/room", function (data) {
+          $.each(data, function (index, item) {
+            $("<button></button>")
+              .attr({
+                "data-room": item,
+              })
+              .text("Room Name: " + item)
+              .appendTo("#container");
+          });
+        });
+        var socket = io.connect();
+        socket.on("create_room", function (data) {
+          $("<button></button>")
+            .attr({
+              "data-room": data,
+            })
+            .text("Room Number: " + data)
+            .appendTo("#container");
+        });
+        $("#container").on("click", "button", function () {
+          var room = $(this).attr("data-room");
+          location = "/canvas/" + room;
+        });
+        $("body > button").click(function () {
+          var room = $("#room").val();
+          socket.emit("create_room", room);
+          location = "/canvas/" + room;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Rint Real Time Canvas</h1>
+    <p>Connect Web Server With Socket.io</p>
+    <span>Room:</span>
+    <input id="room" />
+    <button>CREATE ROOM</button>
+    <hr />
+    <div id="container"></div>
+  </body>
+</html>
