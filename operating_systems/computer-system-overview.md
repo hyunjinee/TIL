@@ -19,7 +19,7 @@
 
 computer: a machine that processes the information.
 
-![운영체제의 계층적 위치](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d3fce9e1-af99-4875-81b0-80e2f9df3a9b/Untitled.png)
+![11](https://user-images.githubusercontent.com/63354527/169681391-1a5e2c41-e88c-4d26-874d-d2fbaf743189.png)
 
                                              운영체제의 계층적 위치
 
