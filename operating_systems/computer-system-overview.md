@@ -49,7 +49,7 @@ A Computer system can be divied roughly into four components
 - Computer HW, OS, System/application programs, User
 - 오직 OS만이 하드웨어와 직접 소통가능하다.
 
-![Absract view of the components of a computer system](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f7cf9f8b-4116-4c18-837c-08a257593fed/Untitled.png)
+![12](https://user-images.githubusercontent.com/63354527/169681567-0955eba9-f9a3-425b-97e7-96d5bca7b8e8.png)
 
 Absract view of the components of a computer system
 
@@ -58,7 +58,7 @@ Modern computer system consists of
 - one or more CPUs
 - a number of device controllers connected through a common **bus**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/bec7e524-91ed-444f-8801-02d88d68cc4d/Untitled.png)
+![144](https://user-images.githubusercontent.com/63354527/169681541-9a3e11cf-9e1d-41f4-bee2-a1d48bc25598.png)
 
 ### 컴퓨터의 부팅
 
@@ -89,7 +89,7 @@ Modern computer system consists of
 - ISR(Interrup Service Routine)을 통해 하드웨어가 필요한 동작을 운영체제로 요청, 끝나면 다시 대기상태
 - Hardware may trigger an interrupt at any time by sending a signal to the CPU, usually by way of the system bus.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/dcbcafc5-6b49-4f2e-b021-cdcff631fb1e/Untitled.png)
+![13](https://user-images.githubusercontent.com/63354527/169681518-6f370d63-c8b6-40a1-9f85-bac2a3c376d4.png)
 
 ### 소트트웨어 인터럽트
 
